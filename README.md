@@ -42,7 +42,7 @@
 
 
 ###output files:
-- LBNL test regions prediction: PredictionUsingChIPSeq.txt
+- 240 LBNL test regions prediction: PredictionUsingChIPSeq.txt
 - Regions likely to function in e11.5 mouse embryo : GenomeWide5kPredictionUsingChIPSeq.txt
 
 
@@ -53,7 +53,7 @@
 - Prioritize other genomics regions: only use top5k regions predicted by chipseq feature method, and apply the trained logistic model(Kmer model) to predict the probability of each types of enhancer in the given 5k regions, and report top 1k highly positive regions. 
 
 ###output files:
-- LBNL test regions prediction: PredictionUsingKmer.txt
+- 240 LBNL test regions prediction: PredictionUsingKmer.txt
 - Regions likely to function in e11.5 mouse embryo : GenomeWide1kPredictionUsingKmer.txt
 
 ####all output coordinates are mm10
