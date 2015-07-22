@@ -56,5 +56,9 @@
 - 240 LBNL test regions prediction: PredictionUsingKmer.txt
 - Regions likely to function in e11.5 mouse embryo : GenomeWide1kPredictionUsingKmer.txt
 
-####all output coordinates are mm10
-
+###output file format:
+- first row: indication of types of enhancer for last 3 columns
+- column 1:mm10 coordinates of predicting region
+- column 2: probability of the given region is a enhancer in any tissue of e11.5 mouse
+- column 3: probability of the given region is a enhancer in forebrain tissue of e11.5 mouse
+- column 4: probability of the given region is a enhancer in heart tissue of e11.5 mouse
