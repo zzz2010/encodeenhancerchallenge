@@ -50,11 +50,11 @@
 - Two types of Kmer features are used: 8mer frequency allowing 3 mismatches ,  5mer pair allow 1 mismatch and 0-30bp gap in between two 5mers
 - Train: for each VISTA region sequence, extract Kmer frequency vector, build logistic regression model using R package "glmnet" for 3 enhancer classification problems: brain, heart, other enhancer
 - Predict LBNL tested regions: extract Kmer frequency feature vector for each test regions, and apply the trained logistic model to predict the probability of each types of enhancer in the given tested regions
-- Prioritize other genomics regions: only use top5k regions predicted by chipseq feature method, and apply the trained logistic model(Kmer model) to predict the probability of each types of enhancer in the given 5k regions, and report top 1k highly positive regions. 
+- Prioritize other genomics regions: only use top5k regions predicted by chipseq feature method, and apply the trained logistic model(Kmer model) to predict the probability of each types of enhancer in the given 5k regions, and report the predictive probability of those highly positive regions. 
 
 ###output files:
 - 240 LBNL test regions prediction: PredictionUsingKmer.txt
-- Regions likely to function in e11.5 mouse embryo : GenomeWide1kPredictionUsingKmer.txt
+- Regions likely to function in e11.5 mouse embryo : GenomeWide5kPredictionUsingKmer.txt
 
 ###output file format:
 - first row: indication of types of enhancer for last 3 columns
@@ -62,3 +62,15 @@
 - column 2: probability of the given region is a enhancer in any tissue of e11.5 mouse
 - column 3: probability of the given region is a enhancer in forebrain tissue of e11.5 mouse
 - column 4: probability of the given region is a enhancer in heart tissue of e11.5 mouse
+
+
+##Submission Files
+- Under submission folder, there are two sets of files : set1_xxx(prediction from method1)  and set2_xxx(prediction from method2)
+- setX_file1,2,3,4: follow the order of submission guideline:
+	- File 1 of prediction - corresponding to heart regions being tested (120 regions) - bed5 format:  first 3 columns correspond to chromosome, start, end of prediction. 4th column is prediction probability of being active in heart, 5th column is prediction probability of being active in any tissue.
+	- File 2 of prediction - corresponding to forebrain regions being tested (120 regions) - bed5 format:  first 3 columns correspond to chromosome, start, end of prediction. 4th column is prediction probability of being active in forebrain, 5th column is prediction probability of being active in any tissue.
+	- File 3 of prediction - genome-wide heart predictions (<= 5k regions) - bed4 format : first 3 columns correspond to chromosome, start, end of prediction. 4th column is prediction probability of being active in heart.
+	- File 4 of prediction - genome-wide forebrain predictions (<= 5k regions) - bed4 format : first 3 columns correspond to chromosome, start, end of prediction. 4th column is prediction probability of being active in forebrain.
+
+
+

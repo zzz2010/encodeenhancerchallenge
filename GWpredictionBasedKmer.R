@@ -55,6 +55,6 @@ prediction=cbind(anyE,brain,heart)
 colnames(prediction)<-c("any","brain","heart")
 rownames(prediction)<-read.table("data/GW5k.mm10.fa.name",stringsAsFactors=F)[,1]
 o=order(-prediction[,1])
-write.table(prediction[o[1:1000],],file="GenomeWide1kPredictionUsingKmer.txt",sep="\t",quote=F)
+write.table(prediction[o,],file="GenomeWide5kPredictionUsingKmer.txt",sep="\t",quote=F)
 
 
